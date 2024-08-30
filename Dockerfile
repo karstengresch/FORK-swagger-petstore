@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM ubi9/openjdk-17-runtime
 
 WORKDIR /swagger-petstore
 
