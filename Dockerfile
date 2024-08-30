@@ -1,5 +1,5 @@
 # 0 - source: https://github.com/swagger-api/swagger-petstore/issues/93
-FROM eclipse-temurin:8-jre-ubi9-minimal
+FROM eclipse-temurin:8-alpine
 
 WORKDIR /swagger-petstore
 
@@ -7,7 +7,7 @@ RUN mkdir -p /var/cache/yum && \
     chown root:root /var/cache/yum && \
     chmod 755 /var/cache/yum
 
-RUN microdnf install -y maven
+RUN apk install maven
 
 COPY src/ /swagger-petstore/src
 COPY pom.xml /swagger-petstore/pom.xml
@@ -15,7 +15,7 @@ COPY pom.xml /swagger-petstore/pom.xml
 RUN mvn --quiet package
 
 # 1
-FROM eclipse-temurin:8-jre-ubi9-minimal
+FROM eclipse-temurin:8-alpine
 
 WORKDIR /swagger-petstore
 
