@@ -7,7 +7,7 @@ RUN mkdir -p /var/cache/yum && \
     chown root:root /var/cache/yum && \
     chmod 755 /var/cache/yum
 
-RUN apk install maven
+RUN apk add maven
 
 COPY src/ /swagger-petstore/src
 COPY pom.xml /swagger-petstore/pom.xml
