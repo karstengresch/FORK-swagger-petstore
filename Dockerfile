@@ -2,6 +2,8 @@ FROM ubi9/openjdk-17:1.20-2.1724037299
 
 WORKDIR /swagger-petstore
 
+RUN mvn clean package
+
 COPY target/lib/jetty-runner.jar /swagger-petstore/jetty-runner.jar
 COPY target/*.war /swagger-petstore/server.war
 COPY src/main/resources/openapi.yaml /swagger-petstore/openapi.yaml
