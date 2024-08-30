@@ -1,7 +1,5 @@
 FROM ubi9/openjdk-17:1.20-2.1724037299
 
-RUN mvn clean package
-
 WORKDIR /swagger-petstore
 
 COPY target/lib/jetty-runner.jar /swagger-petstore/jetty-runner.jar
