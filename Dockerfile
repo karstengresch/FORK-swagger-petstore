@@ -3,7 +3,11 @@ FROM eclipse-temurin:8-jre-ubi9-minimal
 
 WORKDIR /swagger-petstore
 
-RUN apk add maven
+RUN mkdir -p /var/cache/yum && \
+    chown root:root /var/cache/yum && \
+    chmod 755 /var/cache/yum
+
+RUN microdnf install maven
 
 COPY src/ /swagger-petstore/src
 COPY pom.xml /swagger-petstore/pom.xml
