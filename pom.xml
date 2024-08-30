@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -19,6 +21,12 @@
         <directory>target</directory>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
@@ -213,7 +221,7 @@
     </repositories>
     <properties>
         <maven-plugin-version>1.0.0</maven-plugin-version>
-        <swagger-parser-version>2.1.21  </swagger-parser-version>
+        <swagger-parser-version>2.1.21 </swagger-parser-version>
         <swagger-core-version>2.2.17</swagger-core-version>
         <jackson-version>2.16.1</jackson-version>
         <swagger-inflector-version>2.0.11</swagger-inflector-version>
