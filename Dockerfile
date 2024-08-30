@@ -1,5 +1,5 @@
 # 0 - source: https://github.com/swagger-api/swagger-petstore/issues/93
-FROM clipse-temurin:8-jre-ubi9-minimal
+FROM eclipse-temurin:8-jre-ubi9-minimal
 
 WORKDIR /swagger-petstore
 
@@ -11,7 +11,7 @@ COPY pom.xml /swagger-petstore/pom.xml
 RUN mvn --quiet package
 
 # 1
-FROM clipse-temurin:8-jre-ubi9-minimal
+FROM eclipse-temurin:8-jre-ubi9-minimal
 
 WORKDIR /swagger-petstore
 
