@@ -1,4 +1,4 @@
-FROM ubi9/openjdk-17-runtime
+FROM ubi9/openjdk-17
 
 WORKDIR /swagger-petstore
 
